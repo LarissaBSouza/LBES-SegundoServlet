@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 /**
  * Servlet implementation class Calculadora
@@ -13,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Calculadora")
 public class Calculadora extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private boolean valor1;
+	private boolean valor2;
+	private boolean valor3;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -42,6 +46,20 @@ public class Calculadora extends HttpServlet {
 		val2 = Integer.parseInt(request.getParameter("val2"));
 		val3 = Integer.parseInt(request.getParameter("val3"));
 		
+		valor1 = Boolean.getBoolean(JOptionPane.showInputDialog(val1));
+		valor2 = Boolean.getBoolean(JOptionPane.showInputDialog(val2));
+		valor3 = Boolean.getBoolean(JOptionPane.showInputDialog(val3));
+
+		if(valor1 != true){  
+		      response.getWriter().println("Campo Vazio");
+		    }  
+		if(valor2 != true){  
+		      response.getWriter().println("Campo Vazio");
+		    }
+		if(valor3 != true){  
+		      response.getWriter().println("Campo Vazio");
+		    }
+		
 	    if (val1 <= 0 || val2 <= 0 || val3 <= 0) {
 	    	response.getWriter().println("ARGUMENTOS INVÁLIDOS, é possível que essas medidas sejam de um retângulo."); 
 	    } if (val1 == val2 & val2 == val3){ 
@@ -51,6 +69,7 @@ public class Calculadora extends HttpServlet {
 		} else { 
 			response.getWriter().println("Seu triângulo é um : TRIANGULO ESCALENO, possui 3 lados diferentes");
 		}
+	    
 	}
 
 }
