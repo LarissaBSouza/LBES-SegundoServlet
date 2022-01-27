@@ -61,16 +61,22 @@ public class Calculadora extends HttpServlet {
 		//   }
 		
 	    if (val1 <= 0 && val2 <= 0 && val3 <= 0) {
-	    	response.getWriter().println("ARGUMENTOS INVÁLIDOS, é possível que essas medidas sejam de um retângulo."); 
-	    } if (val1 == val2 && val2 == val3 && val1 > 0 && val2 > 0 && val3 > 0){ 
-	    	response.getWriter().println("Seu triângulo é um : TRIÂNGULO EQUILATERO, possui 3 lados iguais.");
-	    } if (val1 == val2 || val2 == val3 || val1 == val3 && val1 > 0 && val2 > 0 && val3 > 0) { 
-	    	response.getWriter().println("Seu triângulo é um : TRIANGULO ISÓSCELE, possui 2 dos lados iguais");
-		} if (val1 != val2 || val2 != val3 || val1 != val3 && val1 > 0 && val2 > 0 && val3 > 0){ 
-			response.getWriter().println("Seu triângulo é um : TRIANGULO ESCALENO, possui 3 lados diferentes");
-		}else {
-			response.getWriter().println("Valores Inválidos!! Tente outros valores.");
-		}
+	    	response.getWriter().println("ARGUMENTOS INVÁLIDOS, é possível que essas medidas sejam de um retângulo.");
+	    } else if (val2 <= 0 && val3 <= 0 && val1 > 0 || val3 <= 0 && val1 <= 0 && val2 > 0 || val2 <= 0 && val1 <= 0 && val3 > 0){
+	    	response.getWriter().println("Estas medidas são de uma reta");
+	    }else if (val1 == val2 && val2 == val3 && val1 == val2) {
+			response.getWriter().println("  Voce construiu um quadrado");
+	    } else {
+	    	if (val1 == val2 && val2 == val3){ 
+	    		response.getWriter().println("Seu triângulo é um : TRIÂNGULO EQUILATERO, possui 3 lados iguais.");
+	    	} else if (val1 == val2 || val2 == val3 || val1 == val3) { 
+	    		response.getWriter().println("Seu triângulo é um : TRIANGULO ISÓSCELE, possui 2 dos lados iguais");
+	    	} else if (val1 != val2 || val2 != val3 || val1 != val3){ 
+	    		response.getWriter().println("Seu triângulo é um : TRIANGULO ESCALENO, possui 3 lados diferentes");
+	    	}else {
+	    		response.getWriter().println("Valores Inválidos!! Tente outros valores.");
+	    	}
+	    }
 	    
 	}
 
