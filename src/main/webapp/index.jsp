@@ -16,13 +16,13 @@
 			<h1>..:::: Calculadora de Triângulos ::::..</h1>
 			<div class="row">
   					<div class="col">
-    					<input type="text" class="form-control" placeholder="Valor Lado A" aria-label="Valor 1" name="val1" >
+    					<input type="text" class="form-control" placeholder="Valor Lado A" aria-label="Valor 1" name="val1" required>
   					</div>
   					<div class="col">
-    					<input type="text" class="form-control" placeholder="Valor Lado B" aria-label="Valor 2" name="val2" >
+    					<input type="text" class="form-control" placeholder="Valor Lado B" aria-label="Valor 2" name="val2" required>
   					</div>
   					<div class="col">
-  						<input type="text" class="form-control" placeholder="Valor Lado C" aria-label="Valor 3" name="val3" >
+  						<input type="text" class="form-control" placeholder="Valor Lado C" aria-label="Valor 3" name="val3" required>
   					</div>
 			</div>
 			<div class="container row align-items-center mt-2 mb-2 buttons">
